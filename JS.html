@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SeriesSum</title>
+</head>
+<body>
+  <script type="text/javascript">
+  	
+    const Series = [{
+      name: 'Web',
+      courses: [{
+        name: 'HTML',
+        lessons: [{
+          name: 'HTML Lesson 1'
+        },{
+          name: 'HTML Lesson 2'
+        },{
+          name: 'HTML Lesson 3'
+        }]
+      },{
+        name: 'CSS',
+        lessons: [{
+          name: 'CSS Lesson 1'
+        },{
+          name: 'CSS Lesson 2'
+        },{
+          name: 'CSS Lesson 3'
+        },{
+          name: 'CSS Lesson 4'
+        }]
+      },{
+        name: 'JavaScript',
+        lessons: [{
+          name: 'JavaScript Lesson 1'
+        },{
+          name: 'JavaScript Lesson 2'
+        }]
+      }]
+    },{
+      name: 'PHP',
+      courses: [{
+        name: 'Linux',
+        lessons: [{
+          name: 'Linux Lesson 1'
+        },{
+          name: 'Linux Lesson 2'
+        }]
+      },{
+        name: 'MySQL',
+        lessons: [{
+          name: 'MySQL Lesson 1'
+        },{
+          name: 'MySQL Lesson 2'
+        },{
+          name: 'MySQL Lesson 3'
+        },{
+          name: 'MySQL Lesson 4'
+        }]
+      },{
+        name: 'Nginx',
+        lessons: [{
+          name: 'Nginx Lesson 1'
+        },{
+          name: 'Nginx Lesson 2'
+        },{
+          name: 'Nginx Lesson 3'
+        },{
+          name: 'Nginx Lesson 4'
+        }]
+      }]
+    }]
+    function seriesSum(Series){
+	// 返回每个系列名称，及每个系列一共有多少个课（lesson 的总数）;
+      // ...
+      // return [];
+            var a=[];
+            var b=[];
+            var c=[];
+            var d=0;
+            var e=0;
+      			for (var i = 0; i < Series.length; i++)
+      			 {
+      			 		c.push({})
+      				for (var j = 0; j < Series[i]['courses'].length; j++) {
+                //'name',ccount->lessins's length
+      						a.push({name:Series[i]['courses'][j]['name'],count:Series[i]['courses'][j]['lessons'].length})
+      						if (i==0) {
+      							d=d+Series[i]['courses'][j]['lessons'].length;//web's count
+      						}
+      						else{
+      							e=d+Series[i]['courses'][j]['lessons'].length;//php's count
+      						}
+      					
+      				}
+      			}
+      		 console.log(a);
+      				b.push({name:Series[0]['name'],count:d})//  name: 'Web',count: 9
+      				b.push({name:Series[1]['name'],count:e})//  name: 'php',count: 10
+      			
+      			return b;
+    }
+    let result = seriesSum(Series);
+    console.log(result);
+    // 结果
+    // [{
+    //  name: 'Web',
+    //  count: 9
+    // },{
+    //  name: 'PHP',
+    //  count: 10
+    // }]
+  </script>
+</body>
+</html>
